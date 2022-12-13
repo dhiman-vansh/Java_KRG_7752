@@ -17,20 +17,28 @@ public class Str {
         }
     }
     public static void revword(String str) {
-        str = str+" ";  
         String[] res = str.split(" ", str.length());
         for (int i= res.length-1 ; i>=0 ; i--) {
             System.out.println(res[i]);
         }
     }
     public static void longsub( String str){
-        
+        String[] res = str.split(" ", str.length());
+        String temp = res[0];        
+        for ( int i=1 ; i<res.length ; i++) {
+            if(temp.length() <= res[i].length()){
+            temp=res[i];
+            }
+            // System.out.println(res[i]);
+        }
+        System.out.println(temp);
     }
 
     public static void main (String args[]) {
         String f= new String("Vansh is I am");
         // f.concat("nw");
-        wordbyword(f);        
-        revword(f);
+        // wordbyword(f);        
+        // revword(f);
+        longsub(f);
     }
 }
